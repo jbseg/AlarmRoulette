@@ -1,0 +1,6 @@
+framework module Pods_AlarmRoulette {
+  umbrella header "Pods-AlarmRoulette-umbrella.h"
+
+  export *
+  module * { export * }
+}

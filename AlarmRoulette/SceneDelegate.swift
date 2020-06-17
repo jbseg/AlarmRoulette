@@ -8,11 +8,12 @@
 
 import UIKit
 import SwiftUI
+import Firebase
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+//    var RT = RealTime()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -21,11 +22,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Create the SwiftUI view that provides the window contents.
         let contentView = ContentView()
-
+        // create a sessionstore so that we can see if the user was logged in or not
+//        let session = SessionStore()
+//        session.listen()
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
-            let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UIHostingController(rootView: contentView)
+        let window = UIWindow(windowScene: windowScene)
+            window.rootViewController = UIHostingController(rootView: contentView.environmentObject(RealTime()).environmentObject(User()).environmentObject(FirstLaunch()))
+            
             self.window = window
             window.makeKeyAndVisible()
         }

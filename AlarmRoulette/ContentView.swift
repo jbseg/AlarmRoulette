@@ -7,15 +7,36 @@
 //
 
 import SwiftUI
+import Firebase
 
-struct ContentView: View {
+struct ContentView : View {
+    
+    @EnvironmentObject var firstLaunch: FirstLaunch
+    @EnvironmentObject var user: User
+    
     var body: some View {
-        Text("Hello, World!")
+        VStack {
+            if !firstLaunch.wasLaunchedBefore {
+                Welcome()
+            }
+            else if Auth.auth().currentUser != nil {
+                Home()
+                 
+                    .transition(.slide)
+                
+            } else {
+                Login()
+                    
+                    .transition(.slide)
+            }
+        }
     }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+           .environmentObject(FirstLaunch())
     }
 }
