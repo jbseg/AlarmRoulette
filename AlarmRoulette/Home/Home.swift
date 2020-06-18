@@ -19,14 +19,13 @@ struct Home: View {
         ZStack{
             NavigationView{
                 ScrollView{
-//                    List(alarmNetwork.alarms) { alarm in
-//
-//                    }
-                    
                     VStack(alignment: .leading, spacing: 15){
-                        AlarmCard(alarmInfo: AlarmInfo(time: DateComponents(hour: 12, minute: 13, second: 0), days_of_the_week: [true, false, false, false, false, false, true], name: "Saturday Run", charity: "BLM", donation: 1.0), alarmOn: true)
-                        AlarmCard(alarmInfo: AlarmInfo(time: DateComponents(hour: 9, minute: 21, second: 0), days_of_the_week: [false, true, true, true, true, true, false], name: "Weekend Grind", charity: "BLM", donation: 1.0), alarmOn: true)
-                        AlarmCard(alarmInfo: AlarmInfo(time: DateComponents(hour: 8, minute: 30, second: 0), days_of_the_week: [true, true, true, true, true, true, true], name: "take pup out", charity: "SPCA", donation: 1.0), alarmOn: false)
+                        //                    forEach(alarmNetwork.alarms) { alarm in
+                        //
+                        //                    }
+                        AlarmCard(alarmInfo: AlarmInfo(time: DateComponents(hour: 12, minute: 13, second: 0), days_of_the_week: [true, false, false, false, false, false, true], name: "Saturday Run", charity: "BLM", donation: 1.0, alarmid: "asdfad123adfasdf123"), alarmOn: true)
+                        AlarmCard(alarmInfo: AlarmInfo(time: DateComponents(hour: 9, minute: 21, second: 0), days_of_the_week: [false, true, true, true, true, true, false], name: "Weekend Grind", charity: "BLM", donation: 1.0, alarmid: "asdfad123adfasdf123"), alarmOn: true)
+                        AlarmCard(alarmInfo: AlarmInfo(time: DateComponents(hour: 8, minute: 30, second: 0), days_of_the_week: [true, true, true, true, true, true, true], name: "take pup out", charity: "SPCA", donation: 1.0,alarmid: "asdfad123adfasdf123"), alarmOn: false)
                     }.padding()
                     
                     Spacer()

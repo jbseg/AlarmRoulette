@@ -14,12 +14,14 @@ class AlarmInfo {
     var name: String
     var charity: String
     var donation: Float
+    var alarmid: String
     
-    init (time: DateComponents, days_of_the_week: Array<Bool>, name: String, charity: String, donation: Float) {
+    init (time: DateComponents, days_of_the_week: Array<Bool>, name: String, charity: String, donation: Float, alarmid: String) {
         self.time = time
         self.days_of_the_week = days_of_the_week
         self.name = name
         self.charity = charity
         self.donation = donation
+        self.alarmid = alarmid
     }
 }
