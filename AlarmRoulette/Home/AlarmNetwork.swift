@@ -11,7 +11,7 @@ import Combine
 
 
 class AlarmNetwork : ObservableObject {
-    @Published var chat = [AlarmInfo]()
+    @Published var alarms = [AlarmInfo]()
     
     init() {
         
