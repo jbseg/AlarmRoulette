@@ -9,9 +9,9 @@
 import SwiftUI
 
 struct alarmSet: View {
-      @Binding var wakeUp: Date
+      @State var wakeUp: Date = Date()
       @EnvironmentObject var RT: RealTime
-      @Binding var alarmIsSet: Bool
+//      @Binding var alarmIsSet: Bool
       @Binding var pageOpen: Bool
       var body: some View {
             ScrollView{
@@ -69,13 +69,13 @@ struct alarmSet: View {
                   UNUserNotificationCenter.current().add(request)
             }
 
-            self.alarmIsSet = true
+//            self.alarmIsSet = true
             self.pageOpen = false
       }
 }
 
 struct alarmSet_Previews: PreviewProvider {
       static var previews: some View {
-            alarmSet(wakeUp: .constant(Date()), alarmIsSet: .constant(false), pageOpen: .constant(false) ).environmentObject(RealTime())
+            alarmSet(pageOpen: .constant(false) ).environmentObject(RealTime())
       }
 }
