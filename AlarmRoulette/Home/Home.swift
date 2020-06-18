@@ -11,9 +11,10 @@ import SwiftUI
 
 struct Home: View {
     @State var showJoin = false
-    @State var showAlarmSheet = true
+    @State var showAlarmSheet = false
     @EnvironmentObject var RT: RealTime
     @EnvironmentObject var user: User
+    @ObservedObject var alarms = AlarmNetwork()
     var body: some View {
         ZStack{
             NavigationView{

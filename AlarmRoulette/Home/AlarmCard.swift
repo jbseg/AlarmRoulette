@@ -8,21 +8,7 @@
 
 import SwiftUI
 
-class AlarmInfo {
-    var time: DateComponents
-    var days_of_the_week: Array<Bool>
-    var name: String
-    var charity: String
-    var donation: Float
-    
-    init (time: DateComponents, days_of_the_week: Array<Bool>, name: String, charity: String, donation: Float) {
-        self.time = time
-        self.days_of_the_week = days_of_the_week
-        self.name = name
-        self.charity = charity
-        self.donation = donation
-    }
-}
+
 
 struct WeekDays: View {
     var days_of_the_week: Array<Bool>

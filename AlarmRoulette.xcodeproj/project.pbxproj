@@ -34,6 +34,8 @@
 		4293FBD1249A854D00DDFF1E /* BillingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4293FBD0249A854D00DDFF1E /* BillingPage.swift */; };
 		4293FBD3249A855D00DDFF1E /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4293FBD2249A855D00DDFF1E /* Home.swift */; };
 		4293FBD5249A857000DDFF1E /* AlarmCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4293FBD4249A857000DDFF1E /* AlarmCard.swift */; };
+		4293FBD7249B00E800DDFF1E /* AlarmNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4293FBD6249B00E800DDFF1E /* AlarmNetwork.swift */; };
+		4293FBD9249B013000DDFF1E /* AlarmInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4293FBD8249B013000DDFF1E /* AlarmInfo.swift */; };
 		552121B9F0BF3960D8A762F8 /* Pods_AlarmRoulette.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999610F4281B685F6D5862B2 /* Pods_AlarmRoulette.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +69,8 @@
 		4293FBD0249A854D00DDFF1E /* BillingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillingPage.swift; sourceTree = "<group>"; };
 		4293FBD2249A855D00DDFF1E /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		4293FBD4249A857000DDFF1E /* AlarmCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCard.swift; sourceTree = "<group>"; };
+		4293FBD6249B00E800DDFF1E /* AlarmNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmNetwork.swift; sourceTree = "<group>"; };
+		4293FBD8249B013000DDFF1E /* AlarmInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmInfo.swift; sourceTree = "<group>"; };
 		4774AD8FC7F9341F447DE8AA /* Pods-AlarmRoulette.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlarmRoulette.debug.xcconfig"; path = "Target Support Files/Pods-AlarmRoulette/Pods-AlarmRoulette.debug.xcconfig"; sourceTree = "<group>"; };
 		999610F4281B685F6D5862B2 /* Pods_AlarmRoulette.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlarmRoulette.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD746400ED2BAE7688391567 /* Pods-AlarmRoulette.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlarmRoulette.release.xcconfig"; path = "Target Support Files/Pods-AlarmRoulette/Pods-AlarmRoulette.release.xcconfig"; sourceTree = "<group>"; };
@@ -151,7 +155,9 @@
 				4293FBCE249A853B00DDFF1E /* LoserPage.swift */,
 				4293FBD0249A854D00DDFF1E /* BillingPage.swift */,
 				4293FBD2249A855D00DDFF1E /* Home.swift */,
+				4293FBD8249B013000DDFF1E /* AlarmInfo.swift */,
 				4293FBD4249A857000DDFF1E /* AlarmCard.swift */,
+				4293FBD6249B00E800DDFF1E /* AlarmNetwork.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -322,6 +328,8 @@
 				4293FBD1249A854D00DDFF1E /* BillingPage.swift in Sources */,
 				4286102A248BC5300098A8A5 /* AppDelegate.swift in Sources */,
 				4293FBC1249A84B700DDFF1E /* Welcome.swift in Sources */,
+				4293FBD7249B00E800DDFF1E /* AlarmNetwork.swift in Sources */,
+				4293FBD9249B013000DDFF1E /* AlarmInfo.swift in Sources */,
 				4293FBB7249A843F00DDFF1E /* SignUpView.swift in Sources */,
 				4293FBC3249A84D100DDFF1E /* BtnStyles.swift in Sources */,
 				4293FBD3249A855D00DDFF1E /* Home.swift in Sources */,
