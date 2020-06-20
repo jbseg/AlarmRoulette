@@ -36,6 +36,9 @@
 		4293FBD5249A857000DDFF1E /* AlarmCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4293FBD4249A857000DDFF1E /* AlarmCard.swift */; };
 		4293FBD7249B00E800DDFF1E /* AlarmNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4293FBD6249B00E800DDFF1E /* AlarmNetwork.swift */; };
 		4293FBD9249B013000DDFF1E /* AlarmInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4293FBD8249B013000DDFF1E /* AlarmInfo.swift */; };
+		4293FBDC249C146900DDFF1E /* alarmMain.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4293FBDB249C146800DDFF1E /* alarmMain.wav */; };
+		4293FBDE249CF68900DDFF1E /* AlarmList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4293FBDD249CF68900DDFF1E /* AlarmList.swift */; };
+		4293FBE0249E72C400DDFF1E /* AlarmPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4293FBDF249E72C400DDFF1E /* AlarmPopUp.swift */; };
 		552121B9F0BF3960D8A762F8 /* Pods_AlarmRoulette.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999610F4281B685F6D5862B2 /* Pods_AlarmRoulette.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +74,9 @@
 		4293FBD4249A857000DDFF1E /* AlarmCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCard.swift; sourceTree = "<group>"; };
 		4293FBD6249B00E800DDFF1E /* AlarmNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmNetwork.swift; sourceTree = "<group>"; };
 		4293FBD8249B013000DDFF1E /* AlarmInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmInfo.swift; sourceTree = "<group>"; };
+		4293FBDB249C146800DDFF1E /* alarmMain.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alarmMain.wav; sourceTree = "<group>"; };
+		4293FBDD249CF68900DDFF1E /* AlarmList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmList.swift; sourceTree = "<group>"; };
+		4293FBDF249E72C400DDFF1E /* AlarmPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmPopUp.swift; sourceTree = "<group>"; };
 		4774AD8FC7F9341F447DE8AA /* Pods-AlarmRoulette.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlarmRoulette.debug.xcconfig"; path = "Target Support Files/Pods-AlarmRoulette/Pods-AlarmRoulette.debug.xcconfig"; sourceTree = "<group>"; };
 		999610F4281B685F6D5862B2 /* Pods_AlarmRoulette.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlarmRoulette.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD746400ED2BAE7688391567 /* Pods-AlarmRoulette.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlarmRoulette.release.xcconfig"; path = "Target Support Files/Pods-AlarmRoulette/Pods-AlarmRoulette.release.xcconfig"; sourceTree = "<group>"; };
@@ -118,6 +124,7 @@
 		42861028248BC5300098A8A5 /* AlarmRoulette */ = {
 			isa = PBXGroup;
 			children = (
+				4293FBDA249C13EB00DDFF1E /* AlarmSounds */,
 				4293FBAD249A82D000DDFF1E /* ClockViews */,
 				4293FBAC249A82BE00DDFF1E /* Login */,
 				4293FBAB249A82AE00DDFF1E /* FirstLaunch */,
@@ -158,6 +165,8 @@
 				4293FBD8249B013000DDFF1E /* AlarmInfo.swift */,
 				4293FBD4249A857000DDFF1E /* AlarmCard.swift */,
 				4293FBD6249B00E800DDFF1E /* AlarmNetwork.swift */,
+				4293FBDD249CF68900DDFF1E /* AlarmList.swift */,
+				4293FBDF249E72C400DDFF1E /* AlarmPopUp.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -190,6 +199,14 @@
 				4293FBB2249A840000DDFF1E /* WakeUpClock.swift */,
 			);
 			path = ClockViews;
+			sourceTree = "<group>";
+		};
+		4293FBDA249C13EB00DDFF1E /* AlarmSounds */ = {
+			isa = PBXGroup;
+			children = (
+				4293FBDB249C146800DDFF1E /* alarmMain.wav */,
+			);
+			path = AlarmSounds;
 			sourceTree = "<group>";
 		};
 		F2CC2EC2891D807D4C71D865 /* Frameworks */ = {
@@ -261,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42861036248BC5330098A8A5 /* LaunchScreen.storyboard in Resources */,
+				4293FBDC249C146900DDFF1E /* alarmMain.wav in Resources */,
 				4293FBA9249A7F8A00DDFF1E /* GoogleService-Info.plist in Resources */,
 				42861033248BC5330098A8A5 /* Preview Assets.xcassets in Resources */,
 				42861030248BC5330098A8A5 /* Assets.xcassets in Resources */,
@@ -327,6 +345,7 @@
 				4293FBB1249A83CA00DDFF1E /* DigitalClock.swift in Sources */,
 				4293FBD1249A854D00DDFF1E /* BillingPage.swift in Sources */,
 				4286102A248BC5300098A8A5 /* AppDelegate.swift in Sources */,
+				4293FBDE249CF68900DDFF1E /* AlarmList.swift in Sources */,
 				4293FBC1249A84B700DDFF1E /* Welcome.swift in Sources */,
 				4293FBD7249B00E800DDFF1E /* AlarmNetwork.swift in Sources */,
 				4293FBD9249B013000DDFF1E /* AlarmInfo.swift in Sources */,
@@ -340,6 +359,7 @@
 				4286102E248BC5300098A8A5 /* ContentView.swift in Sources */,
 				4293FBBB249A846B00DDFF1E /* User.swift in Sources */,
 				4293FBB3249A840000DDFF1E /* WakeUpClock.swift in Sources */,
+				4293FBE0249E72C400DDFF1E /* AlarmPopUp.swift in Sources */,
 				4293FBC9249A850800DDFF1E /* charitySelection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

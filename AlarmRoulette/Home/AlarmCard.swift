@@ -100,11 +100,8 @@ struct AlarmCard: View {
         ], intentIdentifiers: [], options: [])
         
         // create the notification
-        let content = UNMutableNotificationContent()
-        content.title = "Quick! Alarm Roulette time!"
-        content.subtitle = "Be the first to wake up"
-        content.sound = UNNotificationSound.init(named:UNNotificationSoundName(rawValue: "alarmMain.wav"))
-        content.categoryIdentifier = "alarmChoice"
+        
+//        content.categoryIdentifier = "alarmChoice"
         
         
         UNUserNotificationCenter.current().setNotificationCategories([category])
@@ -114,18 +111,29 @@ struct AlarmCard: View {
         // create 3 notifications 30 seconds apart from each other
         for (index, day) in alarmInfo.days_of_the_week.enumerated() {
             if day {
+                let content = UNMutableNotificationContent()
+                content.title = "Quick! Alarm Roulette time!"
+                content.subtitle = "Be the first to wake up"
+                var notification_ids: [String] = []
+                for _ in 0...2 {
+                    let notification_id = UUID().uuidString
+                    notification_ids.append(notification_id)
+                }
+                content.userInfo["notification_ids"] = notification_ids
+                content.userInfo["alarmid"] = self.alarmInfo.alarmid
+                content.sound = UNNotificationSound.init(named:UNNotificationSoundName(rawValue: "alarmMain.wav"))
                 for i in 0...2 {
                     var dc = alarmInfo.time
                     dc.second = i * 30
                     dc.weekday = index + 1
                     let trigger = UNCalendarNotificationTrigger(dateMatching: dc, repeats: true)
-                    let notification_id = UUID().uuidString
-                    self.notification_identifiers.append(notification_id)
-                    let request = UNNotificationRequest(identifier: notification_id, content: content, trigger: trigger)
+                    
+                    let request = UNNotificationRequest(identifier: notification_ids[i], content: content, trigger: trigger)
                     
                     // add our notification request
                     UNUserNotificationCenter.current().add(request)
                     print("added notification for \(dc)")
+//                    print(Date())
                 }
             }
         }
@@ -142,6 +150,6 @@ struct AlarmCard: View {
 struct AlarmCard_Previews: PreviewProvider {
     //    var alarmInfo: AlarmInfo = AlarmInfo(time: DateComponents(hour: 9, minute: 0, second: 0), days_of_the_week: ["Saturday"], charity: "BLM", donation: 1.0)
     static var previews: some View {
-        AlarmCard(alarmInfo: AlarmInfo(time: DateComponents(hour: 9, minute: 30, second: 0), days_of_the_week: [true, false, false, false, false, false, true], name: "Saturday Run", charity: "BLM", donation: 1.0), alarmOn: true)
+        AlarmCard(alarmInfo: AlarmInfo(time: DateComponents(hour: 9, minute: 30, second: 0), days_of_the_week: [true, false, false, false, false, false, true], name: "Saturday Run", charity: "BLM", donation: 1.0, alarmid: "asdfoiw1234"), alarmOn: true)
     }
 }

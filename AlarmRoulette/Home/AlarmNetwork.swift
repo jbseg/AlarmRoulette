@@ -17,6 +17,11 @@ class AlarmNetwork : ObservableObject {
         
         let db = Firestore.firestore()
         
+        // listen on user's alarm list
+        // get the new alarm id
+        // query the alarm collection for the alarmid and get all the info
+        // fill the AlarmInfo structure
+        // apend to list
 //        db.collection("chat2").addSnapshotListener { (snap, err) in
 //            if err != nil {
 //                print((err?.localizedDescription)!)
@@ -39,7 +44,7 @@ class AlarmNetwork : ObservableObject {
 //        }
     }
     
-    func addAlarm(msg: String, user: String, image: Data) {
+    func addAlarm(userid: String) {
         let db = Firestore.firestore()
         
 //        db.collection("chat2").addDocument(data: ["msg": msg, "name": user, "time": FieldValue.serverTimestamp(), "image": image]) { (err) in
