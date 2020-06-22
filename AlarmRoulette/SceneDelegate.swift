@@ -27,10 +27,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         //        session.listen()
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
-            let myVar = (UIApplication.shared.delegate as! AppDelegate).myVar
+            let alarmGlobal = (UIApplication.shared.delegate as! AppDelegate).alarmGlobal
             let window = UIWindow(windowScene: windowScene)
             window.rootViewController = UIHostingController(rootView: contentView.environmentObject(RealTime()).environmentObject(User()).environmentObject(FirstLaunch())
-                .environmentObject(myVar))
+                .environmentObject(alarmGlobal))
             
             self.window = window
             window.makeKeyAndVisible()

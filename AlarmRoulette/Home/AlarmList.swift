@@ -29,7 +29,7 @@ struct AlarmList: View {
                         //                    forEach(alarmNetwork.alarms) { alarm in
                         //  Alarmcard(alarmInfo: alarm, alarmOn:true)
                         //                    }
-                        AlarmCard(alarmInfo: AlarmInfo(time: DateComponents(hour: 18, minute: 22, second: 0), days_of_the_week: [true, false, false, false, false, false, true], name: "Saturday Run", charity: "BLM", donation: 1.0, alarmid: "asdfad123adfasdf123"), alarmOn: true)
+                        AlarmCard(alarmInfo: AlarmInfo(time: DateComponents(hour: 15, minute: 11, second: 0), days_of_the_week: [true, false, false, false, false, false, true], name: "Saturday Run", charity: "BLM", donation: 1.0, alarmid: "asdfad123adfasdf123"), alarmOn: true)
                         AlarmCard(alarmInfo: AlarmInfo(time: DateComponents(hour: 13, minute: 10, second: 0), days_of_the_week: [false, true, true, true, true, true, false], name: "Weekend Grind", charity: "BLM", donation: 1.0, alarmid: "asdfad123adfasdf123"), alarmOn: true)
                         AlarmCard(alarmInfo: AlarmInfo(time: DateComponents(hour: 8, minute: 30, second: 0), days_of_the_week: [true, true, true, true, true, true, true], name: "take pup out", charity: "SPCA", donation: 1.0,alarmid: "asdfad123adfasdf123"), alarmOn: false)
                     }.padding()

@@ -56,5 +56,9 @@ class AlarmNetwork : ObservableObject {
 //            print("Success")
 //        }
     }
+    
+    func alarmStop(userid: String, alarmid: String){
+        // query the db to stop the alarm for this person
+    }
 }
 

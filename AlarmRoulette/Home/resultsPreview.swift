@@ -10,14 +10,15 @@ import SwiftUI
 
 struct resultsPreview: View {
     let images: [String] = ["marilyn", "barack", "silhouette","marilyn", "barack", "silhouette","marilyn", "barack", "silhouette","marilyn", "barack", "silhouette"]
-    @Binding var showSheet: Bool
-    @Binding var showLoserPage: Bool
+//    @State var showSheet: Bool = false
+    @State var showLoserPage: Bool = false
     @State var detailsOpen = false
     var body: some View {
         
         VStack(alignment: .leading){
             ScrollView(.horizontal){
-                HStack(spacing: 3){
+                HStack(spacing: -15){
+                    // this should be listening to the db for updates
                     ForEach(images, id: \.self) { image_name in
                         Image(image_name).resizable().aspectRatio(contentMode: .fit)
                             .frame(width: 50)
@@ -31,7 +32,7 @@ struct resultsPreview: View {
             }
             Button(action: {
                 self.showLoserPage = true
-                self.showSheet = true
+//                self.showSheet = true
             }) {
                 Text("you lost")
             }
@@ -42,7 +43,7 @@ struct resultsPreview: View {
 struct resultsPreview_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView{
-            resultsPreview(showSheet: .constant(false), showLoserPage: .constant(false))
+            resultsPreview(showLoserPage: false)
         }
     }
 }

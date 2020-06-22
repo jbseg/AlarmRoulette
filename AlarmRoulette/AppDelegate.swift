@@ -14,7 +14,7 @@ import Firebase
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     //    var sharedHomeView = HomeView.sharedHomeView
-    var myVar = Test() 
+    var alarmGlobal = AlarmGlobal()
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         UNUserNotificationCenter.current().delegate = self
@@ -49,15 +49,15 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         print("notification was tapped")
         //        sharedHomeView.tapNot()
         withAnimation(.easeInOut(duration: 0.2)) {
-            myVar.test_bool = true
+            alarmGlobal.alarmPopUpOn = true
         }
         //        print("sharedHomeView: \(sharedHomeView)")
         print(response)
         //        print(response.notification.request.content.userInfo["alarmid"]!)
-        myVar.notification_ids = response.notification.request.content.userInfo["notification_ids"] as! [String]
-        myVar.alarmid = response.notification.request.content.userInfo["alarmid"] as! String
-        print(myVar.notification_ids)
-        print(myVar.alarmid)
+        alarmGlobal.notification_ids = response.notification.request.content.userInfo["notification_ids"] as! [String]
+        alarmGlobal.alarmid = response.notification.request.content.userInfo["alarmid"] as! String
+        print(alarmGlobal.notification_ids)
+        print(alarmGlobal.alarmid)
         completionHandler()
     }
 }

@@ -8,9 +8,9 @@
 
 import SwiftUI
 
-class Test: ObservableObject {
-    @Published var test_bool: Bool =  false
-    @Published var alarmid: String = ""
+class AlarmGlobal: ObservableObject {
+    @Published var alarmPopUpOn: Bool =  false
+    @Published var alarmid: String = "default-alarm-id"
     @Published var notification_ids: [String] = []
 }
 
@@ -21,13 +21,13 @@ struct Home: View {
     @EnvironmentObject var RT: RealTime
     @EnvironmentObject var user: User
     @ObservedObject var alarmNetwork = AlarmNetwork()
-    @EnvironmentObject var myVar: Test
+    @EnvironmentObject var alarmGlobal: AlarmGlobal
     var body: some View {
         //        ZStack{
         //            NavigationView{
         //                ScrollView{
         VStack{
-            if myVar.test_bool {
+            if alarmGlobal.alarmPopUpOn {
                 AlarmPopUp().transition(.move(edge: .bottom))
             }
             else {
