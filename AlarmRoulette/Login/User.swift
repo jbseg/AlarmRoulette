@@ -44,16 +44,16 @@ class User : ObservableObject {
                                                 return
                                           }
                                           print("image id \(imageid)")
-                                          // download the image from google storage
-//                                          let downloadRef = Storage.storage().reference(withPath: "profile_img/\(imageid).jpg")
-//                                          downloadRef.getData(maxSize: 3 * 1024 * 1024) { data, error in
-//                                                if error != nil {
-//
-//                                                      print("error downloading image")
-//                                                } else {
-//                                                      self.image = data
-//                                                }
-//                                          }
+//                                           download the image from google storage
+                                          let downloadRef = Storage.storage().reference(withPath: "profile_img/\(imageid).jpg")
+                                          downloadRef.getData(maxSize: 3 * 1024 * 1024) { data, error in
+                                                if error != nil {
+
+                                                      print("error downloading image")
+                                                } else {
+                                                      self.image = data
+                                                }
+                                          }
 
                                     }
                               } else {

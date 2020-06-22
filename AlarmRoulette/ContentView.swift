@@ -13,14 +13,14 @@ struct ContentView : View {
     
     @EnvironmentObject var firstLaunch: FirstLaunch
     @EnvironmentObject var user: User
-    
+    @ObservedObject var alarmNetwork = AlarmNetwork()
     var body: some View {
         VStack {
             if !firstLaunch.wasLaunchedBefore {
                 Welcome()
             }
             else if Auth.auth().currentUser != nil {
-                Home()
+                Home().environmentObject(alarmNetwork)
                  
                     .transition(.slide)
                 

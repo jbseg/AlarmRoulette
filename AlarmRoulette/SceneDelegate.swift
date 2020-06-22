@@ -26,6 +26,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         //        let session = SessionStore()
         //        session.listen()
         // Use a UIHostingController as window root view controller.
+//        do {
+//              try Auth.auth().signOut()
+//        } catch {
+//              print("failed signout")
+//        }
         if let windowScene = scene as? UIWindowScene {
             let myVar = (UIApplication.shared.delegate as! AppDelegate).myVar
             let window = UIWindow(windowScene: windowScene)

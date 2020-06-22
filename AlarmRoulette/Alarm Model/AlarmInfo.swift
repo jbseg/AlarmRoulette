@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-class AlarmInfo {
+class AlarmInfo: Identifiable {
       var time: DateComponents
       var days_of_the_week: [Bool]
       var name: String
