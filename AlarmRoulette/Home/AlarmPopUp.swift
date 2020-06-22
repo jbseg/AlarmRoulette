@@ -50,6 +50,7 @@ struct AlarmPopUp: View {
         let center = UNUserNotificationCenter.current()
         center.getPendingNotificationRequests(completionHandler: { requests in
             print("self.alarmGlobal.alarmid \(self.alarmGlobal.alarmid)")
+            print(requests.count)
             for request in requests {
                 let alarmid = request.content.userInfo["alarmid"] as! String
                 print("alarmid \(alarmid)")
@@ -60,7 +61,7 @@ struct AlarmPopUp: View {
             }
             UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: alarm_ids_to_remove)
         })
-//        print("alarm_ids_to_remove \(alarm_ids_to_remove)")
+        print("alarm_ids_to_remove \(alarm_ids_to_remove)")
         
     }
     

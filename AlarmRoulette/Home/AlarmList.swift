@@ -20,7 +20,7 @@ struct AlarmList: View {
         ZStack{
             NavigationView{
                 //alarmNetwork.setUser(user)
-//                ScrollView{
+                ScrollView{
                     VStack(spacing: 15){
                         ForEach(alarmNetwork.alarms) { alarmInfo in
                                                                       AlarmCard(alarmInfo: alarmInfo, alarmOn: true)
@@ -28,8 +28,8 @@ struct AlarmList: View {
                         }          
                     }
                     
-//                    Spacer()
-//                }
+                    Spacer()
+                }
                     
                 .navigationBarTitle("Alarm Roulette",displayMode: .large)
                 .navigationBarItems(
