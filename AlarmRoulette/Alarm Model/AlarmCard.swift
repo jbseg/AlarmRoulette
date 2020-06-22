@@ -52,11 +52,9 @@ struct AlarmCard: View {
                         .font(.title)
                     Text("Alarm set for \(alarmInfo.time.hour!):\(alarmInfo.time.minute!)")
                         .font(.body)
-                WeekDays(days_of_the_week: alarmInfo.days_of_the_week)
+                    WeekDays(days_of_the_week: alarmInfo.days_of_the_week)
                 }
-                Button(action: {
-                    self.alarmNetwork.deleteAlarm(alarmid: self.alarmInfo.alarmid, userid: self.user.uid!)
-                }, label: {
+                Button(action: deleteAlarm, label: {
                     Image(systemName: "xmark").resizable()
                         .frame(width: 10.0, height: 10.0)
                 })
@@ -74,68 +72,71 @@ struct AlarmCard: View {
         //    })
     }
     
-    func toggleAction(){
-        if !self.alarmOn {
-            print("turning on alarm")
-            self.turnOnAlarm()
-            //                    self.notification_identifiers = []
-        }
-        else {
-            print("turning off alarm")
-            self.turnOffAlarm()
-        }
-        //        return ""
-    }
+    //    func toggleAction(){
+    //        if !self.alarmOn {
+    //            print("turning on alarm")
+    //            self.turnOnAlarm()
+    //            //                    self.notification_identifiers = []
+    //        }
+    //        else {
+    //            print("turning off alarm")
+    //            self.turnOffAlarm()
+    //        }
+    //        //        return ""
+    //    }
     
-    func turnOnAlarm(){
-        //Specifying the notification action
-        let category = UNNotificationCategory(identifier: "alarmChoice", actions: [
-            UNNotificationAction(identifier: "Stop", title: "Stop", options: [.destructive]),
-            UNNotificationAction(identifier: "Snooze", title: "Snooze", options: [])
-        ], intentIdentifiers: [], options: [])
-        
-        // create the notification
-        
-        //        content.categoryIdentifier = "alarmChoice"
-        
-        
-        UNUserNotificationCenter.current().setNotificationCategories([category])
-        
-        // clear all previous notifications
-        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
-        // create 3 notifications 30 seconds apart from each other
-        for (index, day) in alarmInfo.days_of_the_week.enumerated() {
-            if day {
-                let content = UNMutableNotificationContent()
-                content.title = "Quick! Alarm Roulette time!"
-                content.subtitle = "Be the first to wake up"
-                var notification_ids: [String] = []
-                for _ in 0...2 {
-                    let notification_id = UUID().uuidString
-                    notification_ids.append(notification_id)
-                }
-                content.userInfo["notification_ids"] = notification_ids
-                content.userInfo["alarmid"] = self.alarmInfo.alarmid
-                content.sound = UNNotificationSound.init(named:UNNotificationSoundName(rawValue: "alarmMain.wav"))
-                for i in 0...2 {
-                    var dc = alarmInfo.time
-                    dc.second = i * 30
-                    dc.weekday = index + 1
-                    let trigger = UNCalendarNotificationTrigger(dateMatching: dc, repeats: true)
-                    
-                    let request = UNNotificationRequest(identifier: notification_ids[i], content: content, trigger: trigger)
-                    
-                    // add our notification request
-                    UNUserNotificationCenter.current().add(request)
-                    print("added notification for \(dc)")
-                    //                    print(Date())
-                }
-            }
-        }
-        print("notification ids \(notification_identifiers)")
-    }
-    
-    func turnOffAlarm(){
+    //    func turnOnAlarm(){
+    //        //Specifying the notification action
+    //        let category = UNNotificationCategory(identifier: "alarmChoice", actions: [
+    //            UNNotificationAction(identifier: "Stop", title: "Stop", options: [.destructive]),
+    //            UNNotificationAction(identifier: "Snooze", title: "Snooze", options: [])
+    //        ], intentIdentifiers: [], options: [])
+    //
+    //        // create the notification
+    //
+    //        //        content.categoryIdentifier = "alarmChoice"
+    //
+    //
+    //        UNUserNotificationCenter.current().setNotificationCategories([category])
+    //
+    //        // clear all previous notifications
+    //        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+    //        // create 3 notifications 30 seconds apart from each other
+    //        for (index, day) in alarmInfo.days_of_the_week.enumerated() {
+    //            if day {
+    //                let content = UNMutableNotificationContent()
+    //                content.title = "Quick! Alarm Roulette time!"
+    //                content.subtitle = "Be the first to wake up"
+    //                var notification_ids: [String] = []
+    //                for _ in 0...2 {
+    //                    let notification_id = UUID().uuidString
+    //                    notification_ids.append(notification_id)
+    //                }
+    //                content.userInfo["notification_ids"] = notification_ids
+    //                content.userInfo["alarmid"] = self.alarmInfo.alarmid
+    //                content.sound = UNNotificationSound.init(named:UNNotificationSoundName(rawValue: "alarmMain.wav"))
+    //                for i in 0...2 {
+    //                    var dc = alarmInfo.time
+    //                    dc.second = i * 30
+    //                    dc.weekday = index + 1
+    //                    let trigger = UNCalendarNotificationTrigger(dateMatching: dc, repeats: true)
+    //
+    //                    let request = UNNotificationRequest(identifier: notification_ids[i], content: content, trigger: trigger)
+    //
+    //                    // add our notification request
+    //                    UNUserNotificationCenter.current().add(request)
+    //                    print("added notification for \(dc)")
+    //                    //                    print(Date())
+    //                }
+    //            }
+    //        }
+    //        print("notification ids \(notification_identifiers)")
+    //    }
+    //
+    func deleteAlarm(){
+        //        {
+        self.alarmNetwork.deleteAlarm(alarmid: self.alarmInfo.alarmid, userid: self.user.uid!)
+        //        }
         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: notification_identifiers)
         notification_identifiers = []
     }

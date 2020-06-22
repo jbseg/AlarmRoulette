@@ -8,8 +8,8 @@
 
 import SwiftUI
 
-class Test: ObservableObject {
-    @Published var test_bool: Bool =  false
+class AlarmGlobal: ObservableObject {
+    @Published var alarmPopUpOn: Bool =  false
     @Published var alarmid: String = ""
     @Published var notification_ids: [String] = []
 }
@@ -19,11 +19,11 @@ struct Home: View {
     @State var showAlarmSheet = false
     @EnvironmentObject var RT: RealTime
     @EnvironmentObject var user: User
-    @EnvironmentObject var myVar: Test
+    @EnvironmentObject var alarmGlobal: AlarmGlobal
     
     var body: some View {
         VStack{
-            if myVar.test_bool {
+            if alarmGlobal.alarmPopUpOn {
                 AlarmPopUp().transition(.move(edge: .bottom))
             }
             else {

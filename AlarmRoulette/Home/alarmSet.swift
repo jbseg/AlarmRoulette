@@ -60,9 +60,14 @@ struct alarmSet: View {
             let content = UNMutableNotificationContent()
             content.title = "Quick! Alarm Roulette time!"
             content.subtitle = "Be the first to wake up"
+            var notification_ids: [String] = []
+            for _ in 0...2 {
+                let notification_id = UUID().uuidString
+                notification_ids.append(notification_id)
+            }
+            content.userInfo["notification_ids"] = notification_ids
+            content.userInfo["alarmid"] = "asdfasdfasdfasdf"
             content.sound = UNNotificationSound.init(named:UNNotificationSoundName(rawValue: "alarmMain.wav"))
-            content.categoryIdentifier = "alarmChoice"
-            
             
             UNUserNotificationCenter.current().setNotificationCategories([category])
             

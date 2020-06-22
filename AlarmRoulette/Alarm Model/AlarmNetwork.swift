@@ -64,5 +64,9 @@ class AlarmNetwork : ObservableObject {
     func joinAlarm(alarmid: String, userid: String){
         print("join alarmid, \(alarmid) for user \(userid)")
     }
+    
+    func stopAlarm(alarmid: String, userid: String){
+        print("stop alarmid, \(alarmid) for user \(userid)")
+    }
 }
 

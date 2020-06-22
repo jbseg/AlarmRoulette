@@ -9,37 +9,53 @@
 import SwiftUI
 
 struct AlarmPopUp: View {
-    @EnvironmentObject var myVar: Test
+    @EnvironmentObject var alarmGlobal: AlarmGlobal
+    @EnvironmentObject var user : User
+    @EnvironmentObject var alarmNetwork: AlarmNetwork
     var body: some View {
-        
-        VStack {
-            Button(action:{
-                withAnimation(.easeOut(duration: 0.2)) {
-                    self.myVar.test_bool = false
+        NavigationView {
+            VStack(alignment: .leading){
+                DigitalClock()
+                VStack(alignment: .leading){
+                    WakeUpClock(date: Date())
+                    Button(action: turnOffAlarm) {
+                        Text("Stop")
+                    }.buttonStyle(alarmBtnStyle(bgColor: .gray))
                 }
+                .padding(.leading, 10)
+                resultsPreview()
             }
-            ) {
-                Text("exit")
-            }
-            DigitalClock()
-            WakeUpClock(date: Date())
-            Button(action: turnOffAlarm) {
-                Text("Stop")
-            }
-            Text(myVar.alarmid)
+            .padding(.leading, 10)
+                .navigationBarItems(
+                    trailing:
+                    HStack{
+                        Button(action:{
+                            withAnimation(.easeOut(duration: 0.2)) {
+                                self.alarmGlobal.alarmPopUpOn = false
+                            }
+                        }
+                            , label: {
+                                Image(systemName: "xmark.circle").resizable().aspectRatio(contentMode: .fit)
+                                    .frame(width: 30.0, height: 30.0)
+                        })
+                })
         }
-        
     }
     
     func turnOffAlarm(){
-        print(myVar.notification_ids)
-        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: myVar.notification_ids)
-        myVar.notification_ids = []
+        // make the network call to that you stopped the notification
+        alarmNetwork.stopAlarm(alarmid: alarmGlobal.alarmid, userid: user.uid!)
+        
+        // clear all other notifications
+        print(alarmGlobal.notification_ids)
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: alarmGlobal.notification_ids)
+        alarmGlobal.notification_ids = []
     }
+    
 }
 
 struct AlarmPopUp_Previews: PreviewProvider {
     static var previews: some View {
-        AlarmPopUp()
+        AlarmPopUp().environmentObject(AlarmGlobal()).environmentObject(RealTime())
     }
 }

@@ -21,14 +21,16 @@ struct AlarmList: View {
             NavigationView{
                 //alarmNetwork.setUser(user)
 //                ScrollView{
-                    VStack(alignment: .leading, spacing: 15){
+                    VStack(spacing: 15){
                         ForEach(alarmNetwork.alarms) { alarmInfo in
                                                                       AlarmCard(alarmInfo: alarmInfo, alarmOn: true)
+                            
                         }          
-                    }.padding()
+                    }
                     
 //                    Spacer()
 //                }
+                    
                 .navigationBarTitle("Alarm Roulette",displayMode: .large)
                 .navigationBarItems(
                     trailing:
