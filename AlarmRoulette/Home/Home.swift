@@ -11,7 +11,7 @@ import SwiftUI
 class AlarmGlobal: ObservableObject {
     @Published var alarmPopUpOn: Bool =  false
     @Published var alarmid: String = ""
-    @Published var notification_ids: [String] = []
+//    @Published var notification_ids: [String] = []
 }
 
 struct Home: View {

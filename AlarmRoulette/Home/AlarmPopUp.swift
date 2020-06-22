@@ -18,7 +18,7 @@ struct AlarmPopUp: View {
                 DigitalClock()
                 VStack(alignment: .leading){
                     WakeUpClock(date: Date())
-                    Button(action: turnOffAlarm) {
+                    Button(action: stopAlarm) {
                         Text("Stop")
                     }.buttonStyle(alarmBtnStyle(bgColor: .gray))
                 }
@@ -42,14 +42,26 @@ struct AlarmPopUp: View {
         }
     }
     
-    func turnOffAlarm(){
+    func stopAlarm(){
         // make the network call to that you stopped the notification
         alarmNetwork.stopAlarm(alarmid: alarmGlobal.alarmid, userid: user.uid!)
         
-        // clear all other notifications
-        print(alarmGlobal.notification_ids)
-        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: alarmGlobal.notification_ids)
-        alarmGlobal.notification_ids = []
+        var alarm_ids_to_remove = [String]()
+        let center = UNUserNotificationCenter.current()
+        center.getPendingNotificationRequests(completionHandler: { requests in
+            print("self.alarmGlobal.alarmid \(self.alarmGlobal.alarmid)")
+            for request in requests {
+                let alarmid = request.content.userInfo["alarmid"] as! String
+                print("alarmid \(alarmid)")
+                if alarmid == self.alarmGlobal.alarmid {
+                    alarm_ids_to_remove.append(request.identifier)
+                }
+                    
+            }
+            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: alarm_ids_to_remove)
+        })
+//        print("alarm_ids_to_remove \(alarm_ids_to_remove)")
+        
     }
     
 }

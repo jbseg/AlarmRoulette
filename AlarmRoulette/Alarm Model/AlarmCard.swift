@@ -39,7 +39,7 @@ struct WeekDays: View {
 struct AlarmCard: View {
     @State var alarmInfo: AlarmInfo
     @State var alarmOn: Bool
-    @State var notification_identifiers: [String] = []
+//    @State var notification_identifiers: [String] = []
     @EnvironmentObject var alarmNetwork: AlarmNetwork
     @EnvironmentObject var user: User
     
@@ -134,11 +134,20 @@ struct AlarmCard: View {
     //    }
     //
     func deleteAlarm(){
-        //        {
-        self.alarmNetwork.deleteAlarm(alarmid: self.alarmInfo.alarmid, userid: self.user.uid!)
-        //        }
-        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: notification_identifiers)
-        notification_identifiers = []
+        alarmNetwork.stopAlarm(alarmid: alarmInfo.alarmid, userid: user.uid!)
+        
+        var alarm_ids_to_remove = [String]()
+        let center = UNUserNotificationCenter.current()
+        center.getPendingNotificationRequests(completionHandler: { requests in
+            for request in requests {
+                let alarmid = request.content.userInfo["alarmid"] as! String
+                if alarmid == self.alarmInfo.alarmid{
+                    alarm_ids_to_remove.append(request.identifier)
+                }
+                    
+            }
+        })
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: alarm_ids_to_remove)
     }
 }
 

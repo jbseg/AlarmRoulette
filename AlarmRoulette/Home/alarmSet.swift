@@ -65,7 +65,7 @@ struct alarmSet: View {
                 let notification_id = UUID().uuidString
                 notification_ids.append(notification_id)
             }
-            content.userInfo["notification_ids"] = notification_ids
+//            content.userInfo["notification_ids"] = notification_ids
             content.userInfo["alarmid"] = "asdfasdfasdfasdf"
             content.sound = UNNotificationSound.init(named:UNNotificationSoundName(rawValue: "alarmMain.wav"))
             

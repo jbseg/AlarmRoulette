@@ -54,9 +54,9 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         //        print("sharedHomeView: \(sharedHomeView)")
         print(response)
         //        print(response.notification.request.content.userInfo["alarmid"]!)
-        alarmGlobal.notification_ids = response.notification.request.content.userInfo["notification_ids"] as! [String]
+//        alarmGlobal.notification_ids = response.notification.request.content.userInfo["notification_ids"] as! [String]
         alarmGlobal.alarmid = response.notification.request.content.userInfo["alarmid"] as! String
-        print(alarmGlobal.notification_ids)
+//        print(alarmGlobal.notification_ids)
         print(alarmGlobal.alarmid)
         completionHandler()
     }
