@@ -42,8 +42,8 @@ class AlarmNetwork : ObservableObject {
             let alarmRef = db.collection("alarms").document(alarmID)
             alarmRef.getDocument { (document, error) in
                 if let document = document, document.exists {
-                    var ts = document.data()!["time"] as! Timestamp
-                    var dateComponents = Calendar.current.dateComponents([.hour, .minute, .second], from: ts.dateValue())
+                    let ts = document.data()!["time"] as! Timestamp
+                    let dateComponents = Calendar.current.dateComponents([.hour, .minute, .second], from: ts.dateValue())
                     self.alarms.append(AlarmInfo(ownerid: document.data()!["owner ID"] as! String,
                                                  time: dateComponents,
                                                  days_of_the_week: document.data()!["days of the week"] as! [Bool],
@@ -55,6 +55,14 @@ class AlarmNetwork : ObservableObject {
                 }
             }
         } // for loop
+    }
+    
+    func deleteAlarm(alarmid: String, userid: String){
+        print("delete alarmid, \(alarmid) for user \(userid)")
+    }
+    
+    func joinAlarm(alarmid: String, userid: String){
+        print("join alarmid, \(alarmid) for user \(userid)")
     }
 }
 
