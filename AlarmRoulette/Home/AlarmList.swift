@@ -20,40 +20,15 @@ struct AlarmList: View {
         ZStack{
             NavigationView{
                 //alarmNetwork.setUser(user)
-                ScrollView{
+//                ScrollView{
                     VStack(alignment: .leading, spacing: 15){
-                        //Printing out the active alarms
-//                        Button(action: {self.alarmNetwork.change_bool()
-//                            self.alarmNetwork.addToMessages()
-//                        }) {
-//                            Text("change bl")
-//                        }
-//                        if alarmNetwork.bl {
-//                            Text("bl is true")
-//                        } else
-//                        {
-//                            Text("bl is false")
-//                        }
                         ForEach(alarmNetwork.alarms) { alarmInfo in
-                            //                                        Text(alarmInfo.alarmid)
-//                            AlarmCard(alarmInfo: AlarmInfo(ownerid: "asdafsd",time: DateComponents(hour: 18, minute: 22, second: 0), days_of_the_week: [true, false, false, false, false, false, true], name: "Saturday Run", charity: "BLM", alarmid: "asdfad123adfasdf123"), alarmOn: true)
                                                                       AlarmCard(alarmInfo: alarmInfo, alarmOn: true)
-                        }
-//                        List(alarmNetwork.messages, id: \.self) { msg in
-//                            Text(msg)
-//                        }
-//                        ForEach(alarmNetwork.messages, id: \.self) { string in
-//                            Text(string)
-//                        }
-//                        Text(alarmNetwork.messages[0])
-//                        AlarmCard(alarmInfo: AlarmInfo(ownerid: "asdafsd",time: DateComponents(hour: 18, minute: 22, second: 0), days_of_the_week: [true, false, false, false, false, false, true], name: "Saturday Run", charity: "BLM", alarmid: "asdfad123adfasdf123"), alarmOn: true)
-//                        AlarmCard(alarmInfo: AlarmInfo(ownerid: "asdafsd",time: DateComponents(hour: 13, minute: 10, second: 0), days_of_the_week: [false, true, true, true, true, true, false], name: "Weekend Grind", charity: "BLM", alarmid: "asdfad123adfasdf123"), alarmOn: true)
-//                        AlarmCard(alarmInfo: AlarmInfo(ownerid: "asdafsd",time: DateComponents(hour: 8, minute: 30, second: 0), days_of_the_week: [true, true, true, true, true, true, true], name: "take pup out", charity: "SPCA", alarmid: "asdfad123adfasdf123"), alarmOn: false)
-                        
+                        }          
                     }.padding()
                     
-                    Spacer()
-                }
+//                    Spacer()
+//                }
                 .navigationBarTitle("Alarm Roulette",displayMode: .large)
                 .navigationBarItems(
                     trailing:

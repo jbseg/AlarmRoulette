@@ -36,11 +36,6 @@ struct AlarmPopUp: View {
         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: myVar.notification_ids)
         myVar.notification_ids = []
     }
-    
-//    func closePopUp(){
-//
-//
-//    }
 }
 
 struct AlarmPopUp_Previews: PreviewProvider {
