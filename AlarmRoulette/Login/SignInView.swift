@@ -66,8 +66,7 @@ struct SignInView : View {
                 if (error) {
                     Text("username or password is wrong").foregroundColor(.red)
                 }
-                
-                
+               
             }
             .padding(.horizontal, 6)
             

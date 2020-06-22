@@ -150,6 +150,6 @@ struct AlarmCard: View {
 struct AlarmCard_Previews: PreviewProvider {
     //    var alarmInfo: AlarmInfo = AlarmInfo(time: DateComponents(hour: 9, minute: 0, second: 0), days_of_the_week: ["Saturday"], charity: "BLM", donation: 1.0)
     static var previews: some View {
-        AlarmCard(alarmInfo: AlarmInfo(time: DateComponents(hour: 9, minute: 30, second: 0), days_of_the_week: [true, false, false, false, false, false, true], name: "Saturday Run", charity: "BLM", donation: 1.0, alarmid: "asdfoiw1234"), alarmOn: true)
+        AlarmCard(alarmInfo: AlarmInfo(ownerid: "asdafsd", time: DateComponents(hour: 9, minute: 30, second: 0), days_of_the_week: [true, false, false, false, false, false, true], name: "Saturday Run", charity: "BLM", alarmid: "asdfoiw1234"), alarmOn: true)
     }
 }

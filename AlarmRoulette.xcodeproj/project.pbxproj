@@ -129,6 +129,7 @@
 				4293FBAC249A82BE00DDFF1E /* Login */,
 				4293FBAB249A82AE00DDFF1E /* FirstLaunch */,
 				4293FBAA249A82A700DDFF1E /* Home */,
+				5DC0F2C1249FE8F9004D4376 /* Alarm Model */,
 				42861029248BC5300098A8A5 /* AppDelegate.swift */,
 				4286102B248BC5300098A8A5 /* SceneDelegate.swift */,
 				4286102D248BC5300098A8A5 /* ContentView.swift */,
@@ -162,9 +163,6 @@
 				4293FBCE249A853B00DDFF1E /* LoserPage.swift */,
 				4293FBD0249A854D00DDFF1E /* BillingPage.swift */,
 				4293FBD2249A855D00DDFF1E /* Home.swift */,
-				4293FBD8249B013000DDFF1E /* AlarmInfo.swift */,
-				4293FBD4249A857000DDFF1E /* AlarmCard.swift */,
-				4293FBD6249B00E800DDFF1E /* AlarmNetwork.swift */,
 				4293FBDD249CF68900DDFF1E /* AlarmList.swift */,
 				4293FBDF249E72C400DDFF1E /* AlarmPopUp.swift */,
 			);
@@ -207,6 +205,16 @@
 				4293FBDB249C146800DDFF1E /* alarmMain.wav */,
 			);
 			path = AlarmSounds;
+			sourceTree = "<group>";
+		};
+		5DC0F2C1249FE8F9004D4376 /* Alarm Model */ = {
+			isa = PBXGroup;
+			children = (
+				4293FBD8249B013000DDFF1E /* AlarmInfo.swift */,
+				4293FBD4249A857000DDFF1E /* AlarmCard.swift */,
+				4293FBD6249B00E800DDFF1E /* AlarmNetwork.swift */,
+			);
+			path = "Alarm Model";
 			sourceTree = "<group>";
 		};
 		F2CC2EC2891D807D4C71D865 /* Frameworks */ = {

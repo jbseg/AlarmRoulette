@@ -42,7 +42,13 @@ struct SignUpView : View {
                 // create the user in the db
                 let imageid = UUID.init().uuidString
                 print("image bytes: \(self.image)")
-                Firestore.firestore().collection("users").document(result!.user.uid).setData(["firstName": self.firstName, "lastName": self.lastName, "imageid": imageid]) { (err) in
+                Firestore.firestore().collection("users").document(result!.user.uid).setData([
+                  "firstName": self.firstName,
+                  "lastName": self.lastName,
+                  "email": self.email,
+                  "active alarm ids": [],
+                  "imageid": imageid
+                ]) { (err) in
                     if err != nil {
                         print("error uploading the image: \((err?.localizedDescription)!)")
                         return
