@@ -23,7 +23,7 @@ struct AlarmList: View {
                 ScrollView{
                     VStack(spacing: 15){
                         ForEach(alarmNetwork.alarms) { alarmInfo in
-                                                                      AlarmCard(alarmInfo: alarmInfo, alarmOn: true)
+                            AlarmCard(alarmInfo: alarmInfo, alarmOn: true)
                             
                         }          
                     }
@@ -73,7 +73,7 @@ struct AlarmList: View {
             }
         }
         .sheet(isPresented: self.$showAlarmSheet) {
-            alarmSet(pageOpen: self.$showAlarmSheet, alarmNetwork: self.alarmNetwork).environmentObject(self.user).environmentObject(self.RT)
+            alarmSet(pageOpen: self.$showAlarmSheet).environmentObject(self.user).environmentObject(self.RT)
             
         }.onAppear(perform: {self.alarmNetwork.listenDocumentLocal(self.user)})
     }

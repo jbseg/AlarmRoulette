@@ -134,7 +134,7 @@ struct AlarmCard: View {
     //    }
     //
     func deleteAlarm(){
-        alarmNetwork.stopAlarm(alarmid: alarmInfo.alarmid, userid: user.uid!)
+        alarmNetwork.deleteAlarm(alarmid: alarmInfo.alarmid, userid: user.uid!)
         
         var alarm_ids_to_remove = [String]()
         let center = UNUserNotificationCenter.current()
