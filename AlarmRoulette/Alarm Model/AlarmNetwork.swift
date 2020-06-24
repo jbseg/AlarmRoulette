@@ -27,9 +27,9 @@ class AlarmNetwork : ObservableObject {
                               return
                         }
                         alarmsIDs = document.data()!["active alarm ids"] as! [String]
-                        print("alarmIDS \(alarmsIDs)")
+//                        print("alarmIDS \(alarmsIDs)")
                         self.addToAlarms(alarmIDs: alarmsIDs)
-                        print(self.alarms)
+//                        print(self.alarms)
             }
             
             
