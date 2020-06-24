@@ -58,7 +58,12 @@ struct alarmSet: View {
                 }
                 Button(action: setAlarm) {
                     Text("Set Charity Alarm")
-                }.buttonStyle(alarmBtnStyle(bgColor: Color(red: 244/255, green: 126/255, blue: 9/255)))
+                    .frame(width: 200, height: 20, alignment: .center)
+                    .foregroundColor(Color.white)
+                    .padding()
+                    .background(Color(red: 244/255, green: 126/255, blue: 9/255))
+                    .cornerRadius(40)
+                }
             }.padding()
         }
     }
@@ -101,7 +106,7 @@ struct alarmSet: View {
                         dateComponents.second = 0
                     }
                     dateComponents.weekday = index + 1
-                    content.userInfo["dateComponents"] = dateComponents
+//                    content.userInfo["dateComponents"] = dateComponents
                     let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
                     let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
                     print("adding alarm for \(dateComponents)")

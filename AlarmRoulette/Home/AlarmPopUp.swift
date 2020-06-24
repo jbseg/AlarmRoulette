@@ -25,7 +25,12 @@ struct AlarmPopUp: View {
                     WakeUpClock(date: Date())
                     Button(action: stopAlarm) {
                         Text("Stop")
-                    }.buttonStyle(alarmBtnStyle(bgColor: .gray))
+                        .frame(width: 200, height: 20, alignment: .center)
+                        .foregroundColor(Color.white)
+                        .padding()
+                            .background(Color.gray)
+                        .cornerRadius(40)
+                    }
                 }
                 .padding(.leading, 10)
                 resultsPreview()
@@ -66,7 +71,7 @@ struct AlarmPopUp: View {
         }
         
         var alarm_ids_to_remove = [String]()
-        var new_alarm_requests = [DateComponents]()
+//        var new_alarm_requests = [DateComponents]()
         let center = UNUserNotificationCenter.current()
         center.getPendingNotificationRequests(completionHandler: { requests in
             print("self.alarmGlobal.alarmid \(self.alarmGlobal.alarmid)")
@@ -79,7 +84,7 @@ struct AlarmPopUp: View {
 //                print("request trigger \(request.trigger!.)")
                 if alarmid == self.alarmGlobal.alarmid {
                     alarm_ids_to_remove.append(request.identifier)
-                    new_alarm_requests.append(request.content.userInfo["dateComponents"] as! DateComponents)
+//                    new_alarm_requests.append(request.content.userInfo["dateComponents"] as! DateComponents)
                     
 //                    if let trigger = request.trigger as? UNCalendarNotificationTrigger,
 //                        let triggerDate = trigger.nextTriggerDate(){
