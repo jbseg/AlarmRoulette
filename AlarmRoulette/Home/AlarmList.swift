@@ -69,7 +69,7 @@ struct AlarmList: View {
                 )
             }
             if self.showJoin {
-                joinMenu(showJoin: self.$showJoin)
+                  joinMenu(showJoin: self.$showJoin).environmentObject(self.user).environmentObject(self.RT)
             }
         }
         .sheet(isPresented: self.$showAlarmSheet) {

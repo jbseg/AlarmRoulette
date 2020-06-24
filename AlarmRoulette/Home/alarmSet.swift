@@ -19,7 +19,7 @@ struct alarmSet: View {
     @Binding var pageOpen: Bool
     
     @State var wakeUp: Date = Date()
-    @State var Name: String = ""
+    @State var name: String = ""
     let charities = ["BLM", "Unicef", "SPCA", "St. Judes"]
     @State private var charity_index = 0
     @State var Donation: Float = 0
@@ -28,7 +28,7 @@ struct alarmSet: View {
         ScrollView{
             VStack(alignment: .center, spacing: 20){
                 VStack{
-                    TextField("Alarm Group Name", text: $Name)
+                    TextField("Alarm Group Name", text: $name)
                     Divider()
                 }
                 VStack{
@@ -67,6 +67,8 @@ struct alarmSet: View {
         // call alarmNetwork.addAlarm(userid: user.uid)
         print (user.uid!)
         // clear the seconds from the wakeup
+
+      print ()
         
         let components = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: wakeUp)
         self.wakeUp = Calendar.current.date(from: components)!
@@ -119,7 +121,7 @@ struct alarmSet: View {
     func addAlarm() {
         //adds alarm to overall collection
         let alarmRef = db.collection("alarms").addDocument(data: [
-            "name": self.Name,
+            "name": self.name,
             "owner ID": user.uid!,
             "days of the week": self.days_of_the_week,
             "charity": self.charities[self.charity_index],

@@ -8,7 +8,7 @@
 
 import UIKit
 import Firebase
-
+import SwiftUI
 
 
 @UIApplicationMain
@@ -38,7 +38,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
 }
 
-import SwiftUI
 //MARK: - Enabling alarm notfications in Foreground + Action for Notification Response
 extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
