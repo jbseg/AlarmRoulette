@@ -27,7 +27,7 @@ class AlarmNetwork : ObservableObject {
                               return
                         }
                         alarmsIDs = document.data()!["active alarm ids"] as! [String]
-//                        print("alarmIDS \(alarmsIDs)")
+                        print("alarmIDS \(alarmsIDs)")
                         self.addToAlarms(alarmIDs: alarmsIDs)
 //                        print(self.alarms)
             }
@@ -37,11 +37,16 @@ class AlarmNetwork : ObservableObject {
       }
 
       func addToAlarms(alarmIDs: [String]) {
-            self.alarms = []
+            self.alarms = [AlarmInfo]()
             let db = Firestore.firestore()
             for alarmID in alarmIDs {
                   let alarmRef = db.collection("alarms").document(alarmID)
+//                    print("before getting doc")
                   alarmRef.getDocument { (document, error) in
+//                    print("getting doc")
+                    if let error = error {
+                        print("error loading alarm \(error)")
+                    }
                         if let document = document, document.exists {
                               let ts = document.data()!["time"] as! Timestamp
                               let dateComponents = Calendar.current.dateComponents([.hour, .minute, .second], from: ts.dateValue())
@@ -54,6 +59,7 @@ class AlarmNetwork : ObservableObject {
                         } else {
                               print("Document does not exist")
                         }
+//                    print(self.alarms.count)
                   }
             } // for loop
       }

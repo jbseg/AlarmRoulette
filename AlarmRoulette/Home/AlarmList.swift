@@ -20,15 +20,19 @@ struct AlarmList: View {
         ZStack{
             NavigationView{
                 //alarmNetwork.setUser(user)
-                ScrollView{
-                    VStack(spacing: 15){
-                        ForEach(alarmNetwork.alarms) { alarmInfo in
-                            AlarmCard(alarmInfo: alarmInfo, alarmOn: true)
+                VStack{
+                    if !self.alarmNetwork.alarms.isEmpty{
+                        ScrollView(.vertical){
+                            VStack{
+                                ForEach(alarmNetwork.alarms) { alarmInfo in
+                                    AlarmCard(alarmInfo: alarmInfo, alarmOn: true)
+                                    
+                                }.padding(.horizontal, 15)
+                            }
                             
-                        }          
+                            Spacer()
+                        }
                     }
-                    
-                    Spacer()
                 }
                     
                 .navigationBarTitle("Alarm Roulette",displayMode: .large)
@@ -69,7 +73,7 @@ struct AlarmList: View {
                 )
             }
             if self.showJoin {
-                  joinMenu(showJoin: self.$showJoin).environmentObject(self.user).environmentObject(self.RT)
+                joinMenu(showJoin: self.$showJoin).environmentObject(self.user).environmentObject(self.RT)
             }
         }
         .sheet(isPresented: self.$showAlarmSheet) {
