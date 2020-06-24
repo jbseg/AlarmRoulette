@@ -69,10 +69,10 @@ struct joinMenu: View {
             }
 
             // Adding the alarm
-            var wakeUp = addAlarmToUser(alarmID)
+            let wakeUp = addAlarmToUser(alarmID)
 
             // Setting up the notifications
-            setUpNotifications(wakeUp)
+            setUpNotifications(wakeUp, alarmID: alarmID)
             //addAlarm()
       }
 
@@ -104,7 +104,7 @@ struct joinMenu: View {
       }
 
       //function based on alarm set
-      func setUpNotifications(_ wakeup: Date) {
+      func setUpNotifications(_ wakeup: Date, alarmID: String) {
             // if the wakeUp time is before current time, push it a day after today
             var wakeUp: Date = Date()
 
@@ -113,7 +113,7 @@ struct joinMenu: View {
             } else {
                   wakeUp = wakeup
             }
-            
+
             print("wakeUp \(wakeUp) RT \(RT.date)")
 
             //Specifying the notification action
@@ -132,7 +132,7 @@ struct joinMenu: View {
                   notification_ids.append(notification_id)
             }
             //            content.userInfo["notification_ids"] = notification_ids
-            content.userInfo["alarmid"] = "asdfasdfasdfasdf"
+            content.userInfo["alarmid"] = alarmID
             content.sound = UNNotificationSound.init(named:UNNotificationSoundName(rawValue: "alarmMain.wav"))
 
             UNUserNotificationCenter.current().setNotificationCategories([category])
