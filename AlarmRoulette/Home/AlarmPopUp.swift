@@ -33,7 +33,7 @@ struct AlarmPopUp: View {
                     }
                 }
                 .padding(.leading, 10)
-                resultsPreview()
+                resultsPreview(alarmid: alarmGlobal.alarmid)
             }
             .padding(.leading, 10)
             .navigationBarItems(
