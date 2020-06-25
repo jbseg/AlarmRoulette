@@ -48,7 +48,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         print("notification was tapped")
         //        sharedHomeView.tapNot()
         withAnimation(.easeInOut(duration: 0.2)) {
-            alarmGlobal.alarmPopUpOn = true
+            alarmGlobal.HomeView = "alarmPopUp"
         }
         //        print("sharedHomeView: \(sharedHomeView)")
         print(response)

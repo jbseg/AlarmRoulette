@@ -9,9 +9,9 @@
 import SwiftUI
 
 class AlarmGlobal: ObservableObject {
-    @Published var alarmPopUpOn: Bool =  false
+    @Published var HomeView: String = "home"
     @Published var alarmid: String = ""
-//    @Published var notification_ids: [String] = []
+    //    @Published var notification_ids: [String] = []
 }
 
 struct Home: View {
@@ -23,15 +23,16 @@ struct Home: View {
     
     var body: some View {
         VStack{
-            if alarmGlobal.alarmPopUpOn {
-                AlarmPopUp().transition(.move(edge: .bottom))
+            if user.uid != nil {
+                if alarmGlobal.HomeView == "alarmPopUp" {
+                    AlarmPopUp().transition(.move(edge: .bottom))
+                }
+                else if alarmGlobal.HomeView == "home" {
+                    AlarmList().transition(.move(edge: .top))
+                }
             }
             else {
-                if user.uid != nil {
-                    AlarmList().transition(.move(edge: .top))
-                } else {
-                    Text("loading...")
-                }
+                Text("loading...")
             }
         }
     }

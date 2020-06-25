@@ -41,7 +41,7 @@ struct AlarmPopUp: View {
                 HStack{
                     Button(action:{
                         withAnimation(.easeOut(duration: 0.2)) {
-                            self.alarmGlobal.alarmPopUpOn = false
+                            self.alarmGlobal.HomeView = "home"
                         }
                     }
                         , label: {

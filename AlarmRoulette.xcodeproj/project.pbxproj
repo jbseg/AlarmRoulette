@@ -155,13 +155,13 @@
 				4293FBC4249A84E300DDFF1E /* joinMenu.swift */,
 				4293FBC6249A84F600DDFF1E /* alarmSet.swift */,
 				4293FBCA249A851800DDFF1E /* resultsPreview.swift */,
+				4293FBE324A134F200DDFF1E /* AlarmHistory.swift */,
 				4293FBCC249A852A00DDFF1E /* UserProfile.swift */,
 				4293FBCE249A853B00DDFF1E /* LoserPage.swift */,
 				4293FBD0249A854D00DDFF1E /* BillingPage.swift */,
 				4293FBD2249A855D00DDFF1E /* Home.swift */,
 				4293FBDD249CF68900DDFF1E /* AlarmList.swift */,
 				4293FBDF249E72C400DDFF1E /* AlarmPopUp.swift */,
-				4293FBE324A134F200DDFF1E /* AlarmHistory.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";

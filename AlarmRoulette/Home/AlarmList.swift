@@ -32,6 +32,10 @@ struct AlarmList: View {
                             
                             Spacer()
                         }
+                    } else {
+                        Text("So much emptiness\nAdd some alarms!")
+                            .multilineTextAlignment(.center)
+                            .lineLimit(2)
                     }
                 }
                     
