@@ -44,7 +44,7 @@ struct AlarmCard: View {
     @EnvironmentObject var user: User
     
     var body: some View {
-        NavigationLink(destination: AlarmHistory(), label: {
+        NavigationLink(destination: AlarmLeadershipBoard(), label: {
             HStack(alignment: .top){
                 VStack(alignment: .leading, spacing: 5){
                     Text(alarmInfo.name)

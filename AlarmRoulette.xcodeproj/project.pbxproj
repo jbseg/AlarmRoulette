@@ -37,7 +37,7 @@
 		4293FBDC249C146900DDFF1E /* alarmMain.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4293FBDB249C146800DDFF1E /* alarmMain.wav */; };
 		4293FBDE249CF68900DDFF1E /* AlarmList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4293FBDD249CF68900DDFF1E /* AlarmList.swift */; };
 		4293FBE0249E72C400DDFF1E /* AlarmPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4293FBDF249E72C400DDFF1E /* AlarmPopUp.swift */; };
-		4293FBE424A134F200DDFF1E /* AlarmHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4293FBE324A134F200DDFF1E /* AlarmHistory.swift */; };
+		4293FBE424A134F200DDFF1E /* AlarmLeadershipBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4293FBE324A134F200DDFF1E /* AlarmLeadershipBoard.swift */; };
 		552121B9F0BF3960D8A762F8 /* Pods_AlarmRoulette.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999610F4281B685F6D5862B2 /* Pods_AlarmRoulette.framework */; };
 /* End PBXBuildFile section */
 
@@ -74,7 +74,7 @@
 		4293FBDB249C146800DDFF1E /* alarmMain.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alarmMain.wav; sourceTree = "<group>"; };
 		4293FBDD249CF68900DDFF1E /* AlarmList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmList.swift; sourceTree = "<group>"; };
 		4293FBDF249E72C400DDFF1E /* AlarmPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmPopUp.swift; sourceTree = "<group>"; };
-		4293FBE324A134F200DDFF1E /* AlarmHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmHistory.swift; sourceTree = "<group>"; };
+		4293FBE324A134F200DDFF1E /* AlarmLeadershipBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmLeadershipBoard.swift; sourceTree = "<group>"; };
 		4774AD8FC7F9341F447DE8AA /* Pods-AlarmRoulette.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlarmRoulette.debug.xcconfig"; path = "Target Support Files/Pods-AlarmRoulette/Pods-AlarmRoulette.debug.xcconfig"; sourceTree = "<group>"; };
 		999610F4281B685F6D5862B2 /* Pods_AlarmRoulette.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlarmRoulette.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD746400ED2BAE7688391567 /* Pods-AlarmRoulette.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlarmRoulette.release.xcconfig"; path = "Target Support Files/Pods-AlarmRoulette/Pods-AlarmRoulette.release.xcconfig"; sourceTree = "<group>"; };
@@ -155,7 +155,7 @@
 				4293FBC4249A84E300DDFF1E /* joinMenu.swift */,
 				4293FBC6249A84F600DDFF1E /* alarmSet.swift */,
 				4293FBCA249A851800DDFF1E /* resultsPreview.swift */,
-				4293FBE324A134F200DDFF1E /* AlarmHistory.swift */,
+				4293FBE324A134F200DDFF1E /* AlarmLeadershipBoard.swift */,
 				4293FBCC249A852A00DDFF1E /* UserProfile.swift */,
 				4293FBCE249A853B00DDFF1E /* LoserPage.swift */,
 				4293FBD0249A854D00DDFF1E /* BillingPage.swift */,
@@ -339,7 +339,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4293FBE424A134F200DDFF1E /* AlarmHistory.swift in Sources */,
+				4293FBE424A134F200DDFF1E /* AlarmLeadershipBoard.swift in Sources */,
 				4293FBCF249A853B00DDFF1E /* LoserPage.swift in Sources */,
 				4293FBC5249A84E300DDFF1E /* joinMenu.swift in Sources */,
 				4293FBB9249A845900DDFF1E /* SignInView.swift in Sources */,
