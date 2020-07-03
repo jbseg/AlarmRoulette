@@ -14,7 +14,7 @@ import FirebaseFirestore
 class User : ObservableObject {
       //    var didChange = PassthroughSubject<SessionStore, Never>()
       let db = Firestore.firestore()
-
+      
       @Published var uid: String?
       @Published var email: String?
       @Published var firstName: String?
@@ -22,8 +22,8 @@ class User : ObservableObject {
       @Published var activeAlarmIds: [String] = []
       @Published var image : Data?
       var handle: AuthStateDidChangeListenerHandle?
-
-
+      
+      
       init () {
             // monitor authentication changes using firebase
             handle = Auth.auth().addStateDidChangeListener { (auth, user) in
@@ -44,17 +44,17 @@ class User : ObservableObject {
                                                 return
                                           }
                                           print("image id \(imageid)")
-//                                           download the image from google storage
+                                          //                                           download the image from google storage
                                           let downloadRef = Storage.storage().reference(withPath: "profile_img/\(imageid).jpg")
                                           downloadRef.getData(maxSize: 3 * 1024 * 1024) { data, error in
                                                 if error != nil {
-
+                                                      
                                                       print("error downloading image")
                                                 } else {
                                                       self.image = data
                                                 }
                                           }
-
+                                          
                                     }
                               } else {
                                     print("Can't find user in db")
@@ -70,10 +70,10 @@ class User : ObservableObject {
             password: String,
             handler: @escaping AuthDataResultCallback
       ) {
-
+            
             Auth.auth().createUser(withEmail: email, password: password, completion: handler)
       }
-
+      
       func signIn(
             email: String,
             password: String,
@@ -81,7 +81,7 @@ class User : ObservableObject {
       ) {
             Auth.auth().signIn(withEmail: email, password: password, completion: handler)
       }
-
+      
       func signOut () -> Bool {
             do {
                   try Auth.auth().signOut()
@@ -94,13 +94,13 @@ class User : ObservableObject {
                   return false
             }
       }
-
+      
       func unbind () {
             if let handle = handle {
                   Auth.auth().removeStateDidChangeListener(handle)
             }
       }
-
+      
       func clearUserSession () {
             self.uid = nil
             self.email = nil
@@ -108,14 +108,14 @@ class User : ObservableObject {
             self.lastName = nil
             self.image = nil
       }
-
+      
       func addAlarm(alarmID: String) {
             activeAlarmIds.append(alarmID)
             let userRef = db.collection("users").document(uid!)
-
+            
             // Atomically add a new region to the "regions" array field.
             userRef.updateData([
-                "active alarm ids": FieldValue.arrayUnion([alarmID])
+                  "active alarm ids": FieldValue.arrayUnion([alarmID])
             ])
       }
 }

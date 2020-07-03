@@ -62,7 +62,7 @@ struct AlarmCard: View {
                 
             .frame(minWidth: 0, maxWidth: .infinity)
             .padding()
-            .background(Color.white)
+            .background(Color("AlarmCard"))
             .cornerRadius(25)
             .shadow(color: .gray, radius: 2, x: 0, y: 2)
             //            .padding()

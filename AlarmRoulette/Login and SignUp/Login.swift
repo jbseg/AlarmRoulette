@@ -9,17 +9,17 @@
 import SwiftUI
 
 struct Login: View {
-    var body: some View {
-        NavigationView{
-            VStack{
-                SignUpView()
+      var body: some View {
+            NavigationView{
+                  VStack{
+                        SignUpView()
+                  }
             }
-        }
-    }
+      }
 }
 
 struct Login_Previews: PreviewProvider {
-    static var previews: some View {
-        Login()
-    }
+      static var previews: some View {
+            Login()
+      }
 }

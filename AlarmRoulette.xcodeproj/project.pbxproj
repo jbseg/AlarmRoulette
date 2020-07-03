@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4286102A248BC5300098A8A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42861029248BC5300098A8A5 /* AppDelegate.swift */; };
-		4286102C248BC5300098A8A5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4286102B248BC5300098A8A5 /* SceneDelegate.swift */; };
 		4286102E248BC5300098A8A5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4286102D248BC5300098A8A5 /* ContentView.swift */; };
 		42861030248BC5330098A8A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4286102F248BC5330098A8A5 /* Assets.xcassets */; };
 		42861033248BC5330098A8A5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42861032248BC5330098A8A5 /* Preview Assets.xcassets */; };
@@ -39,12 +38,13 @@
 		4293FBE0249E72C400DDFF1E /* AlarmPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4293FBDF249E72C400DDFF1E /* AlarmPopUp.swift */; };
 		4293FBE424A134F200DDFF1E /* AlarmLeadershipBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4293FBE324A134F200DDFF1E /* AlarmLeadershipBoard.swift */; };
 		552121B9F0BF3960D8A762F8 /* Pods_AlarmRoulette.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999610F4281B685F6D5862B2 /* Pods_AlarmRoulette.framework */; };
+		5DC4722724AE750600261D23 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DC4722624AE750600261D23 /* Colors.xcassets */; };
+		5DC4722F24AED24200261D23 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC4722E24AED24100261D23 /* SceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		42861026248BC5300098A8A5 /* AlarmRoulette.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlarmRoulette.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42861029248BC5300098A8A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4286102B248BC5300098A8A5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		4286102D248BC5300098A8A5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4286102F248BC5330098A8A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42861032248BC5330098A8A5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -76,6 +76,8 @@
 		4293FBDF249E72C400DDFF1E /* AlarmPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmPopUp.swift; sourceTree = "<group>"; };
 		4293FBE324A134F200DDFF1E /* AlarmLeadershipBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmLeadershipBoard.swift; sourceTree = "<group>"; };
 		4774AD8FC7F9341F447DE8AA /* Pods-AlarmRoulette.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlarmRoulette.debug.xcconfig"; path = "Target Support Files/Pods-AlarmRoulette/Pods-AlarmRoulette.debug.xcconfig"; sourceTree = "<group>"; };
+		5DC4722624AE750600261D23 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		5DC4722E24AED24100261D23 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		999610F4281B685F6D5862B2 /* Pods_AlarmRoulette.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlarmRoulette.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD746400ED2BAE7688391567 /* Pods-AlarmRoulette.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlarmRoulette.release.xcconfig"; path = "Target Support Files/Pods-AlarmRoulette/Pods-AlarmRoulette.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,21 +124,19 @@
 		42861028248BC5300098A8A5 /* AlarmRoulette */ = {
 			isa = PBXGroup;
 			children = (
-				4293FBDA249C13EB00DDFF1E /* AlarmSounds */,
-				4293FBAD249A82D000DDFF1E /* ClockViews */,
-				4293FBAC249A82BE00DDFF1E /* Login */,
-				4293FBAB249A82AE00DDFF1E /* FirstLaunch */,
-				4293FBAA249A82A700DDFF1E /* Home */,
-				5DC0F2C1249FE8F9004D4376 /* Alarm Model */,
-				42861029248BC5300098A8A5 /* AppDelegate.swift */,
-				4286102B248BC5300098A8A5 /* SceneDelegate.swift */,
-				4286102D248BC5300098A8A5 /* ContentView.swift */,
-				4286102F248BC5330098A8A5 /* Assets.xcassets */,
-				42861034248BC5330098A8A5 /* LaunchScreen.storyboard */,
+				5DC4722E24AED24100261D23 /* SceneDelegate.swift */,
 				4293FBA8249A7F8A00DDFF1E /* GoogleService-Info.plist */,
 				42861037248BC5330098A8A5 /* Info.plist */,
+				42861029248BC5300098A8A5 /* AppDelegate.swift */,
+				4286102D248BC5300098A8A5 /* ContentView.swift */,
+				42861034248BC5330098A8A5 /* LaunchScreen.storyboard */,
+				5DC4722C24AECE8D00261D23 /* App setup files */,
+				4293FBAB249A82AE00DDFF1E /* FirstLaunch */,
+				4293FBAC249A82BE00DDFF1E /* Login and SignUp */,
+				4293FBAA249A82A700DDFF1E /* Home */,
+				5DC0F2C1249FE8F9004D4376 /* Alarm Model */,
+				5DC4722824AE7B8200261D23 /* Assets */,
 				42861031248BC5330098A8A5 /* Preview Content */,
-				4293FBAE249A82EC00DDFF1E /* RealTime.swift */,
 			);
 			path = AlarmRoulette;
 			sourceTree = "<group>";
@@ -152,16 +152,9 @@
 		4293FBAA249A82A700DDFF1E /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				4293FBC4249A84E300DDFF1E /* joinMenu.swift */,
-				4293FBC6249A84F600DDFF1E /* alarmSet.swift */,
-				4293FBCA249A851800DDFF1E /* resultsPreview.swift */,
-				4293FBE324A134F200DDFF1E /* AlarmLeadershipBoard.swift */,
-				4293FBCC249A852A00DDFF1E /* UserProfile.swift */,
-				4293FBCE249A853B00DDFF1E /* LoserPage.swift */,
-				4293FBD0249A854D00DDFF1E /* BillingPage.swift */,
 				4293FBD2249A855D00DDFF1E /* Home.swift */,
-				4293FBDD249CF68900DDFF1E /* AlarmList.swift */,
-				4293FBDF249E72C400DDFF1E /* AlarmPopUp.swift */,
+				5DC4722924AECC2B00261D23 /* Alarm Deck */,
+				5DC4722A24AECDBF00261D23 /* Results */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -175,7 +168,7 @@
 			path = FirstLaunch;
 			sourceTree = "<group>";
 		};
-		4293FBAC249A82BE00DDFF1E /* Login */ = {
+		4293FBAC249A82BE00DDFF1E /* Login and SignUp */ = {
 			isa = PBXGroup;
 			children = (
 				4293FBB4249A842C00DDFF1E /* Login.swift */,
@@ -184,7 +177,7 @@
 				4293FBBA249A846B00DDFF1E /* User.swift */,
 				4293FBBC249A848200DDFF1E /* ImagePicker.swift */,
 			);
-			path = Login;
+			path = "Login and SignUp";
 			sourceTree = "<group>";
 		};
 		4293FBAD249A82D000DDFF1E /* ClockViews */ = {
@@ -207,11 +200,53 @@
 		5DC0F2C1249FE8F9004D4376 /* Alarm Model */ = {
 			isa = PBXGroup;
 			children = (
+				4293FBAD249A82D000DDFF1E /* ClockViews */,
 				4293FBD8249B013000DDFF1E /* AlarmInfo.swift */,
 				4293FBD4249A857000DDFF1E /* AlarmCard.swift */,
 				4293FBD6249B00E800DDFF1E /* AlarmNetwork.swift */,
+				4293FBAE249A82EC00DDFF1E /* RealTime.swift */,
 			);
 			path = "Alarm Model";
+			sourceTree = "<group>";
+		};
+		5DC4722824AE7B8200261D23 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				4293FBDA249C13EB00DDFF1E /* AlarmSounds */,
+				4286102F248BC5330098A8A5 /* Assets.xcassets */,
+				5DC4722624AE750600261D23 /* Colors.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		5DC4722924AECC2B00261D23 /* Alarm Deck */ = {
+			isa = PBXGroup;
+			children = (
+				4293FBDD249CF68900DDFF1E /* AlarmList.swift */,
+				4293FBC6249A84F600DDFF1E /* alarmSet.swift */,
+				4293FBC4249A84E300DDFF1E /* joinMenu.swift */,
+				4293FBCC249A852A00DDFF1E /* UserProfile.swift */,
+			);
+			path = "Alarm Deck";
+			sourceTree = "<group>";
+		};
+		5DC4722A24AECDBF00261D23 /* Results */ = {
+			isa = PBXGroup;
+			children = (
+				4293FBDF249E72C400DDFF1E /* AlarmPopUp.swift */,
+				4293FBCA249A851800DDFF1E /* resultsPreview.swift */,
+				4293FBE324A134F200DDFF1E /* AlarmLeadershipBoard.swift */,
+				4293FBCE249A853B00DDFF1E /* LoserPage.swift */,
+				4293FBD0249A854D00DDFF1E /* BillingPage.swift */,
+			);
+			path = Results;
+			sourceTree = "<group>";
+		};
+		5DC4722C24AECE8D00261D23 /* App setup files */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "App setup files";
 			sourceTree = "<group>";
 		};
 		F2CC2EC2891D807D4C71D865 /* Frameworks */ = {
@@ -285,6 +320,7 @@
 				42861036248BC5330098A8A5 /* LaunchScreen.storyboard in Resources */,
 				4293FBDC249C146900DDFF1E /* alarmMain.wav in Resources */,
 				4293FBA9249A7F8A00DDFF1E /* GoogleService-Info.plist in Resources */,
+				5DC4722724AE750600261D23 /* Colors.xcassets in Resources */,
 				42861033248BC5330098A8A5 /* Preview Assets.xcassets in Resources */,
 				42861030248BC5330098A8A5 /* Assets.xcassets in Resources */,
 			);
@@ -357,10 +393,10 @@
 				4293FBD9249B013000DDFF1E /* AlarmInfo.swift in Sources */,
 				4293FBB7249A843F00DDFF1E /* SignUpView.swift in Sources */,
 				4293FBD3249A855D00DDFF1E /* Home.swift in Sources */,
-				4286102C248BC5300098A8A5 /* SceneDelegate.swift in Sources */,
 				4293FBBD249A848200DDFF1E /* ImagePicker.swift in Sources */,
 				4293FBCD249A852A00DDFF1E /* UserProfile.swift in Sources */,
 				4293FBD5249A857000DDFF1E /* AlarmCard.swift in Sources */,
+				5DC4722F24AED24200261D23 /* SceneDelegate.swift in Sources */,
 				4286102E248BC5300098A8A5 /* ContentView.swift in Sources */,
 				4293FBBB249A846B00DDFF1E /* User.swift in Sources */,
 				4293FBB3249A840000DDFF1E /* WakeUpClock.swift in Sources */,

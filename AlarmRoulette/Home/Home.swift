@@ -9,38 +9,38 @@
 import SwiftUI
 
 class AlarmGlobal: ObservableObject {
-    @Published var HomeView: String = "home"
-    @Published var alarmid: String = ""
-    //    @Published var notification_ids: [String] = []
+      @Published var HomeView: String = "home"
+      @Published var alarmid: String = ""
+      //    @Published var notification_ids: [String] = []
 }
 
 struct Home: View {
-    @State var showJoin = false
-    @State var showAlarmSheet = false
-    @EnvironmentObject var RT: RealTime
-    @EnvironmentObject var user: User
-    @EnvironmentObject var alarmGlobal: AlarmGlobal
-    
-    var body: some View {
-        VStack{
-            if user.uid != nil {
-                if alarmGlobal.HomeView == "alarmPopUp" {
-                    AlarmPopUp().transition(.move(edge: .bottom))
-                }
-                else if alarmGlobal.HomeView == "home" {
-                    AlarmList().transition(.move(edge: .top))
-                }
+      @State var showJoin = false
+      @State var showAlarmSheet = false
+      @EnvironmentObject var RT: RealTime
+      @EnvironmentObject var user: User
+      @EnvironmentObject var alarmGlobal: AlarmGlobal
+      
+      var body: some View {
+            VStack{
+                  if user.uid != nil {
+                        if alarmGlobal.HomeView == "alarmPopUp" {
+                              AlarmPopUp().transition(.move(edge: .bottom))
+                        }
+                        else if alarmGlobal.HomeView == "home" {
+                              AlarmList().transition(.move(edge: .top))
+                        }
+                  }
+                  else {
+                        Text("loading...")
+                  }
             }
-            else {
-                Text("loading...")
-            }
-        }
-    }
+      }
 }
 
 
 struct Home_Previews: PreviewProvider {
-    static var previews: some View {
-        Home().environmentObject(RealTime()).environmentObject(User())
-    }
+      static var previews: some View {
+            Home().environmentObject(RealTime()).environmentObject(User())
+      }
 }

@@ -10,33 +10,33 @@ import SwiftUI
 import Firebase
 
 struct ContentView : View {
-    
-    @EnvironmentObject var firstLaunch: FirstLaunch
-    @EnvironmentObject var user: User
-    @ObservedObject var alarmNetwork = AlarmNetwork()
-    var body: some View {
-        VStack {
-            if !firstLaunch.wasLaunchedBefore {
-                Welcome()
+      
+      @EnvironmentObject var firstLaunch: FirstLaunch
+      @EnvironmentObject var user: User
+      @ObservedObject var alarmNetwork = AlarmNetwork()
+      var body: some View {
+            VStack {
+                  if !firstLaunch.wasLaunchedBefore {
+                        Welcome()
+                  }
+                  else if Auth.auth().currentUser != nil {
+                        Home().environmentObject(alarmNetwork)
+                              
+                              .transition(.slide)
+                        
+                  } else {
+                        Login()
+                              
+                              .transition(.slide)
+                  }
             }
-            else if Auth.auth().currentUser != nil {
-                Home().environmentObject(alarmNetwork)
-                 
-                    .transition(.slide)
-                
-            } else {
-                Login()
-                    
-                    .transition(.slide)
-            }
-        }
-    }
+      }
 }
 
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-           .environmentObject(FirstLaunch())
-    }
+      static var previews: some View {
+            ContentView()
+                  .environmentObject(FirstLaunch())
+      }
 }
